@@ -1,0 +1,10 @@
+apiVersion: gloo.solo.io/v1
+kind: Upstream
+metadata:
+  name: blip
+  namespace: default
+spec:
+  kube:
+    serviceName: blip
+    serviceNamespace: default
+    servicePort: {{ .Values.ports.blip }}
