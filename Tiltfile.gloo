@@ -1,0 +1,4 @@
+load('ext://helm_remote', 'helm_remote')
+
+helm_remote('gloo', repo_name='gloo', namespace='gloo-system')
+k8s_resource('gateway-proxy', port_forwards=3000)

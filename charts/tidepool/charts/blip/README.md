@@ -21,9 +21,7 @@ A Helm chart for Kubernetes
 | pdb.enabled | bool | `false` |  |
 | pdb.minAvailable | string | `"50%"` |  |
 | podAnnotations | object | `{}` |  |
-| podSecurityContext | object | `{}` |  |
 | resources | object | `{}` |  |
-| securityContext | object | `{}` |  |
 | tolerations | list | `[]` |  |
 
 ----------------------------------------------

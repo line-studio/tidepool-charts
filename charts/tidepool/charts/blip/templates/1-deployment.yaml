@@ -36,8 +36,6 @@ spec:
       {{- end }}
       containers:
       - image: "{{ .Values.deployment.image }}"
-        securityContext:
-          {{- .Values.podSecurityContext | toYaml | nindent 10 }}
 {{ if .Values.command }}
         command: {{ .Values.command }}
 {{- end }}
@@ -76,8 +74,6 @@ spec:
 {{- end }}
         resources:
           {{- toYaml .Values.resources | nindent 10 }}
-      securityContext:
-        {{- toYaml .Values.securityContext | nindent 8 }}
       restartPolicy: Always
     {{- with .Values.nodeSelector }}
       nodeSelector:
