@@ -11,7 +11,10 @@ spec:
   ports:
   - name: "http"
     port: {{ .Values.ports.blip }}
-    targetPort: "http"
+    targetPort: {{ .Values.ports.blip }}
+  - name: "https"
+    port: 443
+    targetPort: {{ .Values.ports.blip }}
 {{ range $key, $port := .Values.ports.viz }}
   - name: 'http-viz-{{ $key }}'
     port: {{ $port }}
