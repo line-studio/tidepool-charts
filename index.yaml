@@ -23,16 +23,6 @@ entries:
     version: 0.1.0
   tidepool:
   - apiVersion: v2
-    created: "2020-12-09T19:47:46.285927659Z"
-    description: A Helm chart for Tidepool
-    digest: c7b599c24cdb6a4588b1973f6431f249cd0a22c3e3b2960c46d429d5d9ed9722
-    home: https://github.com/line-studio/tidepool-charts/charts
-    icon: https://www.tidepool.org/static/media/tidepool-t-logo.41feef82.png
-    name: tidepool
-    urls:
-    - https://github.com/line-studio/tidepool-charts/releases/download/tidepool-0.9.19/tidepool-0.9.19.tgz
-    version: 0.9.19
-  - apiVersion: v2
     appVersion: 0.9.19
     created: "2020-12-11T15:37:24.523466312Z"
     description: A (custom) Helm chart for Tidepool
