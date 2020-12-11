@@ -1,7 +1,7 @@
 apiVersion: v2
 description: A (custom) Helm chart for Tidepool
 name: tidepool
-version: 0.2.1
+version: 0.2.2
 appVersion: 0.9.19
 icon: https://www.tidepool.org/static/media/tidepool-t-logo.41feef82.png
 home: https://github.com/line-studio/tidepool-charts/charts
