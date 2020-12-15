@@ -1,0 +1,47 @@
+configmap:
+  # -- whether to generate a configmap
+  enabled: false
+  data:
+    ClinicDemoUserId: ""
+    KeycloakClientId: ""
+    KeycloakRealmUrl: ""
+secret:
+  # -- whether to generate a secret
+  enabled: false
+  data_:
+    # -- service authorization secret
+    ServiceAuth: ""
+    # -- the token to use for long term logins
+    UserLongTermKey:
+    # -- the string to append to emails to forgo verification
+    UserMailVerification: ""
+    # -- the Tidepool user id of the Clinic demo account
+    ClinicDemoUserId: ""
+    KeycloakClientSecret: ""
+    KeycloakMigrationSecret: ""
+deployment:
+  # -- Docker image
+  image: tidepool/shoreline:master-latest
+  # -- the number of replicas to use
+  replicas: 1
+# hostPath: ../shoreline          # Uncomment to build and run local image
+containerPath: '/go/src/github.com/tidepool-org/shoreline'
+rebuildCommand: './build.sh'
+# -- memory and cpu resources for pods
+resources: {}
+# -- annotations for each pod in deployment
+podAnnotations: {}
+mongo:
+  # -- name of the secret containing the credentials of the mongo database to use
+  secretName: mongo
+kafka:
+  # -- name of the configmap containing the kafka broker and credentials to use
+  configmapName: kafka
+  # -- name of the configmap containing the kafka broker and credentials to use
+  secretName: kafka
+# -- node selector configuration
+nodeSelector: {}
+# -- tolerations
+tolerations: []
+# -- affinity
+affinity: {}

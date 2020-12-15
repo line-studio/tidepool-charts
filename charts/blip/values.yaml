@@ -1,0 +1,15 @@
+global:
+  gloo:
+    enabled: true
+  ports:
+    blip: 3000
+deployment:
+  podAnnotations: {}
+  # -- default Docker image
+  image: tidepool/blip:master-latest
+  replicas: 1
+resources: {}
+podAnnotations: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}

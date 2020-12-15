@@ -1,0 +1,32 @@
+global:
+  gloo:
+    enabled: true
+  ports:
+    gatekeeper: 9123
+deployment:
+  # -- Docker image
+  image: tidepool/gatekeeper:master-latest
+  # -- number of replicas to deploy
+  replicas: 1
+
+# -- memory and cpu resources for pods
+resources: {}
+# -- security context for each pod in deployment
+podSecurityContext: {}
+# -- annotations for each pod in deployment
+podAnnotations: {}
+securityContext: {}
+mongo:
+  # -- name of the secret containing the credentials of the mongo database to use
+  secretName: mongo
+kafka:
+  # -- name of the configmap containing the kafka broker and credentials to use
+  configmapName: kafka
+  # -- name of the configmap containing the kafka broker and credentials to use
+  secretName: kafka
+# -- node selector configuration
+nodeSelector: {}
+# -- tolerations
+tolerations: []
+# -- affinity
+affinity: {}

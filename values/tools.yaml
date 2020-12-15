@@ -1,0 +1,27 @@
+# -- whether to enable tools service
+enabled: true
+deployment:
+  # -- Docker image
+  image: tidepool/platform-tools:master-latest
+  # -- number of replicas
+  replicas: 1
+# hostPath: ../platform       # Uncomment to build and run local image
+containerPath: '/go/src/github.com/tidepool-org/platform'
+dockerFile: 'Dockerfile.tools'
+rebuildCommand: 'SERVICE=tools make service-build'
+# -- memory and cpu resources for pods
+resources: {}
+# -- security context for each pod in deployment
+podSecurityContext: {}
+# -- annotations for each pod in deployment
+podAnnotations: {}
+securityContext: {}
+mongo:
+  # -- name of the secret containing the credentials of the mongo database to use
+  secretName: mongo
+# -- node selector configuration
+nodeSelector: {}
+# -- tolerations
+tolerations: []
+# -- affinity
+affinity: {}

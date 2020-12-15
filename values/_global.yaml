@@ -1,0 +1,42 @@
+global:
+  logLevel: info
+  region: 'us-east-1'
+  gloo:
+    enabled: true
+  gateway:
+    default:
+      protocol: http
+      host: localhost:3000
+      domain: localhost
+    proxy:
+      name: gateway-proxy
+      namespace: gloo-system
+  ports:
+    blip: 3000
+    devices_grpc: 9228
+    devices_http: 9229
+    export: 9300
+    gatekeeper: 9123
+    highwater: 9191
+    hydrophone: 9157
+    jellyfish: 9122
+    messageapi: 9119
+    auth: 9222
+    blob: 9225
+    data: 9220
+    image: 9226
+    notification: 9223
+    prescription: 9227
+    task: 9224
+    user: 9221
+    seagull: 9120
+    shoreline: 9107
+    summary: 9230
+    tidewhisperer: 9127
+    viz:
+      stories: 8083
+      typestories: 8082
+  secret:
+    enabled: true
+    templated: true
+    generated: true

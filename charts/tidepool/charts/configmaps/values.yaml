@@ -1,4 +1,0 @@
-dexcom:
-  # -- whether to generate a configmap for Dexcom
-  enabled: true
-  redirectURL: ""

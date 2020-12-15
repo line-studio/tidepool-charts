@@ -1,0 +1,11 @@
+global:
+  gateway:
+      default:
+        protocol: http
+        host: k8s-gloosyst-alb-7abbd02a5a-1222790345.us-east-1.elb.amazonaws.com
+        domain: k8s-gloosyst-alb-7abbd02a5a-1222790345.us-east-1.elb.amazonaws.com
+  nameOverride: ''
+dexcom:
+  # -- whether to generate a configmap for Dexcom
+  enabled: true
+  redirectURL: ""
