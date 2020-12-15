@@ -3,3 +3,4 @@ overrides.yaml
 tilt_modules/
 test.yaml
 .helm/
+values_local/
