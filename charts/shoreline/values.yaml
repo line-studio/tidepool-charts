@@ -1,0 +1,56 @@
+global:
+  gateway:
+    default:
+      protocol: http
+      host: k8s-gloosyst-alb-7abbd02a5a-1222790345.us-east-1.elb.amazonaws.com
+      domain: k8s-gloosyst-alb-7abbd02a5a-1222790345.us-east-1.elb.amazonaws.com
+  ports:
+    shoreline: 9107
+  gloo:
+    enabled: true
+  secret:
+    generated: true
+configmap:
+  # -- whether to generate a configmap
+  enabled: false
+  data:
+    ClinicDemoUserId: ""
+    KeycloakClientId: ""
+    KeycloakRealmUrl: ""
+secret:
+  # -- whether to generate a secret
+  enabled: false
+  data_:
+    # -- service authorization secret
+    ServiceAuth: ""
+    # -- the token to use for long term logins
+    UserLongTermKey:
+    # -- the string to append to emails to forgo verification
+    UserMailVerification: ""
+    # -- the Tidepool user id of the Clinic demo account
+    ClinicDemoUserId: ""
+    KeycloakClientSecret: ""
+    KeycloakMigrationSecret: ""
+deployment:
+  # -- Docker image
+  image: tidepool/shoreline:master-latest
+  # -- the number of replicas to use
+  replicas: 1
+# -- memory and cpu resources for pods
+resources: {}
+# -- annotations for each pod in deployment
+podAnnotations: {}
+mongo:
+  # -- name of the secret containing the credentials of the mongo database to use
+  secretName: mongo
+kafka:
+  # -- name of the configmap containing the kafka broker and credentials to use
+  configmapName: kafka
+  # -- name of the configmap containing the kafka broker and credentials to use
+  secretName: kafka
+# -- node selector configuration
+nodeSelector: {}
+# -- tolerations
+tolerations: []
+# -- affinity
+affinity: {}

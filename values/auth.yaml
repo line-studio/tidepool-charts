@@ -1,0 +1,45 @@
+enabled: true
+secret:
+  # -- whether to generate a secret
+  enabled: true
+  data_:
+    ServiceAuth: ""
+    AppleDeviceCheckKey: ""
+configmap:
+  data_:
+    # -- used for checking generating jwts, which are required for checking the validity of apple device tokens during the insulet authorization flow. 
+    AppleDeviceCheckKeyIssuer: "75U4X84TEG"
+    AppleDeviceCheckKeyId: "B542R658GF"
+    AppleDeviceCheckUseDevelopment: true
+deployment:
+  # -- auth Docker image
+  image: tidepool/platform-auth:master-latest
+  # -- number of replicas to deploy
+  replicas: 1
+# hostPath: ../platform      # Uncomment to build and run local image
+containerPath: '/go/src/github.com/tidepool-org/platform'
+dockerFile: 'Dockerfile.auth'
+rebuildCommand: 'SERVICE=auth make service-build'
+initContainers: []
+
+# -- memory and cpu resources for pods
+resources: {}
+# -- security context for each pod in deployment
+podSecurityContext: {}
+# -- annotations for each pod in deployment
+podAnnotations: {}
+securityContext: {}
+mongo:
+  # -- name of the secret containing the credentials of the mongo database to use
+  secretName: mongo
+kafka:
+  # -- name of the configmap containing the kafka broker and credentials to use
+  configmapName: kafka
+  # -- name of the configmap containing the kafka broker and credentials to use
+  secretName: kafka
+# -- node selector configuration
+nodeSelector: {}
+# -- tolerations
+tolerations: []
+# -- affinity
+affinity: {}

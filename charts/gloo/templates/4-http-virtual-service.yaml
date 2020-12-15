@@ -1,0 +1,31 @@
+{{ if .Values.global.gloo.enabled }}
+{{- $spec := .Values.virtualServices.http }}
+{{ if $spec.enabled }}
+{{- $port := $spec.port | default "80" }}
+---
+apiVersion: gateway.solo.io/v1
+kind: VirtualService
+metadata:
+  name: {{ $spec.name  }}
+  namespace: '{{ .Release.Namespace }}'
+  labels:
+  {{- range $key, $value := $spec.labels}}
+    {{ $key }}: {{ $value | quote }}
+  {{- end }}
+spec:
+  displayName: http
+  virtualHost:
+    domains:
+    - '*'
+    - internal.{{ .Release.Namespace }}
+    routes:
+    - matchers:
+      - prefix: '/'
+      delegateAction:
+        selector:
+          labels:
+            app: tidepool
+          namespaces:
+            - {{ $.Release.Namespace }}
+{{- end }}
+{{- end }}
