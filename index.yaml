@@ -90,6 +90,16 @@ entries:
   secrets:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2020-12-16T16:08:22.845340918Z"
+    description: A Helm chart for Kubernetes
+    digest: d682a7d106495fc749b7d8203161970f5e3ec7c790c987897ef5f8481df4206b
+    home: https://github.com/line-studio/tidepool-charts
+    name: secrets
+    urls:
+    - https://github.com/line-studio/tidepool-charts/releases/download/secrets-0.2.0/secrets-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-12-15T14:56:12.766291958Z"
     description: A Helm chart for Kubernetes
     digest: 5fd5ee14474076f4ae91db6379a509bc99607657b0fa59927880c6f4ef54fa13
