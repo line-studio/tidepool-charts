@@ -1,0 +1,15 @@
+deployment:
+  image: tidepool/devices:master-latest
+  replicas: 1
+  # -- annotations for each pod in deployment
+  podAnnotations: {}
+
+# -- memory and cpu resources for pods
+resources: {}
+securityContext: {}
+# -- node selector configuration
+nodeSelector: {}
+# -- tolerations
+tolerations: []
+# -- affinity
+affinity: {}

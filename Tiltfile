@@ -1,13 +1,26 @@
 charts = [
     'auth',
     'blip',
+    'blob',
     'configmaps',
+    'data',
+    'devices',
+    'export',
     'gatekeeper',
     'gloo',
+    'highwater',
+    'hydrophone',
     'kafka',
+    'messageapi',
+    'migrations',
+    'prescription',
+    'seagull',
     'secrets',
     'shoreline',
+    'task',
+    'tidewhisperer',
     'tools',
+    'user',
     'zookeeper'
 ]
 

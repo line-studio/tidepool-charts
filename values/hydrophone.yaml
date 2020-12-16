@@ -1,0 +1,49 @@
+deployment:
+  # -- Docker image
+  image: tidepool/hydrophone:master-latest
+  replicas: 1
+  env:
+    # -- from address for emails that we send
+    fromAddress: "Tidepool <noreply@tidepool.org>"
+    store:
+      s3:
+        bucket: "asset"
+serviceAccount:
+  # -- whether to create a service account
+  create: false
+livenessProbe:
+  # -- whether to enable a liveness probe
+  enabled: false
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  # -- path to liveness probe
+  path: /live
+readinessProbe:
+  # -- whether to enable a readiness probe
+  enabled: true
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  # -- path to readiness probe
+  path: /status
+
+# -- memory and cpu resources for pods
+resources: {}
+# -- security context for each pod in deployment
+podSecurityContext: {}
+# -- annotations for each pod in deployment
+podAnnotations: {}
+securityContext: {}
+mongo:
+  # -- name of the secret containing the credentials of the mongo database to use
+  secretName: mongo
+kafka:
+  # -- name of the configmap containing the kafka broker and credentials to use
+  configmapName: kafka
+  # -- name of the configmap containing the kafka broker and credentials to use
+  secretName: kafka
+# -- node selector configuration
+nodeSelector: {}
+# -- tolerations
+tolerations: []
+# -- affinity
+affinity: {}

@@ -1,0 +1,31 @@
+# -- whether to run the service
+enabled: true
+secret:
+  data_:
+    # -- in memory encryption of cookies and tokens
+    SessionEncryptionKey: ""
+deployment:
+  # -- default Docker image
+  image: tidepool/export:master-latest
+  # -- number of replicas to deploy
+  replicas: 1
+serviceMonitor:
+  # -- whether to generate a prometheus-operator ServiceMonitor resource
+  enabled: false
+
+# -- memory and cpu resources for pods
+resources: {}
+# -- security context for each pod in deployment
+podSecurityContext: {}
+# -- annotations for each pod in deployment
+podAnnotations: {}
+securityContext: {}
+mongo:
+  # -- name of the secret containing the credentials of the mongo database to use
+  secretName: mongo
+# -- node selector configuration
+nodeSelector: {}
+# -- tolerations
+tolerations: []
+# -- affinity
+affinity: {}
