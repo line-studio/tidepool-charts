@@ -1,4 +1,3 @@
-enabled: true
 secret:
   # -- whether to generate a secret
   enabled: true
