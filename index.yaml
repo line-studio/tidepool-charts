@@ -45,6 +45,16 @@ entries:
   blob:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2020-12-17T15:14:15.239225376Z"
+    description: A Helm chart for Kubernetes
+    digest: 65f43c02df2d6a101f59cff5d3a93143689d1ec2d552a9932dd6b68d80df263f
+    home: https://github.com/tidepool-org/development/charts
+    name: blob
+    urls:
+    - https://github.com/line-studio/tidepool-charts/releases/download/blob-0.3.0/blob-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-12-16T20:50:17.713509038Z"
     description: A Helm chart for Kubernetes
     digest: 78c27f63360cdb1361f3b220fdddfe9a319418583f7eaedf7a27b5943a41ec16
@@ -133,6 +143,16 @@ entries:
   hydrophone:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2020-12-17T15:14:15.340243702Z"
+    description: A Helm chart for Kubernetes
+    digest: 5f28e4d90f0ec2ef521ad7224a117bfcc8ba29423e9982837ede0ae2861ab1c7
+    home: https://github.com/tidepool-org/development/charts
+    name: hydrophone
+    urls:
+    - https://github.com/line-studio/tidepool-charts/releases/download/hydrophone-0.3.0/hydrophone-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-12-16T20:50:18.178854097Z"
     description: A Helm chart for Kubernetes
     digest: 14a9a40745d35690af31d675c1bc9e56709876aaa239892873af16f12a0c8299
@@ -177,6 +197,15 @@ entries:
   prescription:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2020-12-17T15:14:15.464783743Z"
+    description: A Helm chart for Kubernetes
+    digest: 1bc7f9ffc3e68f7786208d10f03bd6f2f471c2654b48c0fdb82b3852f471a66f
+    name: prescription
+    urls:
+    - https://github.com/line-studio/tidepool-charts/releases/download/prescription-0.3.0/prescription-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-12-16T20:50:18.462764031Z"
     description: A Helm chart for Kubernetes
     digest: 532af1db6d86f9354dc854bcc44a2a75f64ed978e9fe12ebd80a4cce49549389
@@ -196,6 +225,16 @@ entries:
     - https://github.com/line-studio/tidepool-charts/releases/download/seagull-0.2.0/seagull-0.2.0.tgz
     version: 0.2.0
   secrets:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-12-17T15:14:15.618148248Z"
+    description: A Helm chart for Kubernetes
+    digest: 3321834db676683f461dfa3283a7075497595502491118291d2f84ec09f1cec9
+    home: https://github.com/line-studio/tidepool-charts
+    name: secrets
+    urls:
+    - https://github.com/line-studio/tidepool-charts/releases/download/secrets-0.3.0/secrets-0.3.0.tgz
+    version: 0.3.0
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-12-16T16:08:22.845340918Z"
