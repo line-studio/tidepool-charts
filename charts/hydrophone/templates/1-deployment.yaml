@@ -42,6 +42,7 @@ spec:
 {{- end }}
       containers:
       - env:
+        {{ include "charts.aws.credentials" .}}
         {{ include "charts.mongo.params" .}}
         {{ include "charts.kafka.common" .}}
         {{ include "charts.tracing.common" .}}

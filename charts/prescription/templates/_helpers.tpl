@@ -17,7 +17,7 @@
 {{- .Values.global.gateway.default.protocol -}}://{{- .Values.global.gateway.default.appHost | default .Values.global.gateway.default.host }}
 {{- end }}
 
-{{- define "charts.s3.url" -}} https://s3-{{.Values.global.region}}.amazonaws.com {{- end }}
+{{- define "charts.s3.url" -}} https://s3.{{.Values.global.region}}.amazonaws.com {{- end }}
 
 {{- define "charts.init.shoreline" -}}
       - name: init-shoreline
