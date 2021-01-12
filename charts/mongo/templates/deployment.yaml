@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mongodb
+    helm.sh/chart: {{ include "charts.chart" . }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    app.kubernetes.io/name: {{ include "charts.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  name: mongodb
+  namespace: {{.Release.Namespace}}
+spec:
+  selector:
+    matchLabels:
+      app: mongodb
+      app.kubernetes.io/name: {{ include "charts.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        "sidecar.istio.io/inject": "false"
+      labels:
+        app: mongodb
+        app.kubernetes.io/name: {{ include "charts.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+      - image: "{{ .Values.image }}"
+        name: mongo
+        ports:
+        - containerPort: {{.Values.port}}
+        resources: {}
+{{ if .Values.persistent }}
+        volumeMounts:
+        - mountPath: /data/db
+          name: {{.Values.volume}}
+{{ end }}
+      restartPolicy: Always

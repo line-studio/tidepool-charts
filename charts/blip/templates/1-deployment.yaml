@@ -65,6 +65,10 @@ spec:
         - name: API_HOST
           value: {{ .Values.apiHost }}
 {{- end }}
+{{ if .Values.appHost }}
+        - name: APP_HOST
+          value: {{ .Values.appHost }}
+{{- end }}
         name: blip
         ports:
         - containerPort: {{.Values.global.ports.blip}}

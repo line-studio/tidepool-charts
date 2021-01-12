@@ -1,0 +1,32 @@
+{{ if .Values.seed }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: database-seeder
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    spec:
+      volumes:
+        - name: dump
+          emptyDir: {}
+      initContainers:
+      - image: tidepool/mongoseed:init
+        name: seed-data
+        command: [ "/bin/sh" ]
+        args: [ "-c", "mkdir -p /input; cp -r /dump/* /input" ]
+        imagePullPolicy: Always
+        volumeMounts:
+        - mountPath: /input
+          name: dump
+      containers:
+      - name: database-seeder
+        image: "{{ .Values.image }}"
+        volumeMounts:
+        - mountPath: /dump
+          name: dump
+        command: [ "/bin/sh" ]
+        args: [ "-c", 'ls -l /dump; while ! mongo --host mongodb --eval "db.adminCommand(\"ping\")"; do sleep 3; done; mongorestore -h mongodb /dump;' ]
+      restartPolicy: OnFailure
+  backoffLimit: 3
+{{ end }}

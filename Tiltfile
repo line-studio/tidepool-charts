@@ -13,6 +13,7 @@ charts = [
     'kafka',
     'messageapi',
     'migrations',
+    'mongo',
     'prescription',
     'seagull',
     'secrets',
