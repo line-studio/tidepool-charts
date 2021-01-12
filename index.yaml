@@ -14,6 +14,16 @@ entries:
   blip:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-01-12T19:43:23.878043339Z"
+    description: Custom helm chart for Tidepool's Blip web app
+    digest: 2bbf9d9568f0f6f45837da25c2d749d37f56f3f81558f4cd38a1dd0d1a4ac9a4
+    home: https://github.com/line-studio/tidepool-charts/charts
+    name: blip
+    urls:
+    - https://github.com/line-studio/tidepool-charts/releases/download/blip-0.3.0/blip-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-12-15T14:56:12.159004392Z"
     description: Custom helm chart for Tidepool's Blip web app
     digest: 65868b851bfa53e2dc5278a6fcc95a088cb040c9961c641000a3f5698f5e7851
@@ -194,6 +204,18 @@ entries:
     urls:
     - https://github.com/line-studio/tidepool-charts/releases/download/migrations-0.2.0/migrations-0.2.0.tgz
     version: 0.2.0
+  mongo:
+  - apiVersion: v1
+    created: "2021-01-12T19:43:23.976782871Z"
+    description: A Helm chart for Kubernetes
+    digest: 545e70a7d683cf008f1c348303eb9f44a0bef1ee5f52bb4d60e9b0ff4d8f9be8
+    maintainers:
+    - email: miguel@linehq.com
+      name: Miguel Araujo
+    name: mongo
+    urls:
+    - https://github.com/line-studio/tidepool-charts/releases/download/mongo-0.1.4/mongo-0.1.4.tgz
+    version: 0.1.4
   prescription:
   - apiVersion: v1
     appVersion: "1.0"
