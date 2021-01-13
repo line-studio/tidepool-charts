@@ -10,6 +10,7 @@ charts = [
     'gloo',
     'highwater',
     'hydrophone',
+    'jellyfish',
     'kafka',
     'messageapi',
     'migrations',
