@@ -171,6 +171,17 @@ entries:
     urls:
     - https://github.com/line-studio/tidepool-charts/releases/download/hydrophone-0.2.0/hydrophone-0.2.0.tgz
     version: 0.2.0
+  jellyfish:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-01-13T20:36:50.274987192Z"
+    description: A Helm chart for Kubernetes
+    digest: 952634e451a82a760a80d3ee276b697c0ea837d14350227710a043cf0a592aeb
+    home: https://github.com/line-studio/tidepool-charts
+    name: jellyfish
+    urls:
+    - https://github.com/line-studio/tidepool-charts/releases/download/jellyfish-0.1.0/jellyfish-0.1.0.tgz
+    version: 0.1.0
   kafka:
   - apiVersion: v1
     appVersion: "1.0"
