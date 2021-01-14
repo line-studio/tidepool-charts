@@ -69,6 +69,10 @@ spec:
         - name: APP_HOST
           value: {{ .Values.appHost }}
 {{- end }}
+{{ if .Values.uploaderRepository }}
+        - name: UPLOADER_REPOSITORY
+          value: {{ .Values.uploaderRepository }}
+{{- end }}
         name: blip
         ports:
         - containerPort: {{.Values.global.ports.blip}}

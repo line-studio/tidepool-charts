@@ -5,6 +5,7 @@ deployment:
 containerPath: '/app'
 apiHost: 'http://localhost:3000'
 appHost: 'http://localhost:3000'
+uploaderRepository: 'line-studio/tidepool-uploader'
 rollbarPostServerToken: '' # Rollbar post_server_item access token for posting source maps on production builds
 webpackDevTool: cheap-module-eval-source-map
 webpackDevToolViz: cheap-source-map # Suggest changing `cheap-source-map` to the slower, but far more helpful `source-map` if debugging errors in viz package files
