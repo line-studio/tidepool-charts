@@ -14,6 +14,16 @@ entries:
   blip:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-01-14T14:06:09.132914451Z"
+    description: Custom helm chart for Tidepool's Blip web app
+    digest: 5cdb456ac1510b6a0455963ed1c53109164053c67848f31036dff28e834b400b
+    home: https://github.com/line-studio/tidepool-charts/charts
+    name: blip
+    urls:
+    - https://github.com/line-studio/tidepool-charts/releases/download/blip-0.3.1/blip-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-01-12T19:43:23.878043339Z"
     description: Custom helm chart for Tidepool's Blip web app
     digest: 2bbf9d9568f0f6f45837da25c2d749d37f56f3f81558f4cd38a1dd0d1a4ac9a4
