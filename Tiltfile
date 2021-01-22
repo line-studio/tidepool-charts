@@ -28,6 +28,21 @@ charts = [
 
 globalValuesPath = './values/_global.yaml'
 
+ghp_token = os.environ.get("GHP_TOKEN")
+
+if not ghp_token:
+    msg = ("Please make sure to set the 'GHP_TOKEN' environment variable. Some of the services (e.g., Seagull)"
+            "need it when using the local development image (building from the repo).")
+    warn(msg)
+
+docker_build('tidepool-seagull-dev', '../../LineTidepool/tidepool-seagull', 
+    target='development', 
+    build_args={ 
+        'GHP_TOKEN': ghp_token
+    })
+docker_build('tidepool-shoreline-dev', '../../LineTidepool/tidepool-shoreline', target='development')
+docker_build('tidepool-blip-dev', '../../LineTidepool/tidepool-blip', target='development')
+
 def runHelmChart(chartName):
     values = []
     chartPath = "./charts/{chartName}".format(chartName=chartName)
