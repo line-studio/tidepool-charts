@@ -28,7 +28,6 @@ global:
     notification: 9223
     prescription: 9227
     task: 9224
-    user: 9221
     seagull: 9120
     shoreline: 9107
     summary: 9230

@@ -12,6 +12,7 @@ charts = [
     'hydrophone',
     'jellyfish',
     'kafka',
+    'keycloak',
     'messageapi',
     'migrations',
     'mongo',
@@ -22,7 +23,6 @@ charts = [
     'task',
     'tidewhisperer',
     'tools',
-    'user',
     'zookeeper'
 ]
 
@@ -31,9 +31,9 @@ globalValuesPath = './values/_global.yaml'
 ghp_token = os.environ.get("GHP_TOKEN")
 
 if not ghp_token:
-    msg = ("Please make sure to set the 'GHP_TOKEN' environment variable. Some of the services (e.g., Seagull)"
+    msg = ("Please make sure to set the 'GHP_TOKEN' environment variable. Some of the services (e.g., Seagull) " +
             "need it when using the local development image (building from the repo).")
-    warn(msg)
+    fail(msg)
 
 docker_build('tidepool-seagull-dev', '../../LineTidepool/tidepool-seagull', 
     target='development', 

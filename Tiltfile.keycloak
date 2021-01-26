@@ -1,0 +1,4 @@
+load('ext://helm_remote', 'helm_remote')
+
+helm_remote('keycloak', repo_name='codecentric', values=['./values_local/keycloak.yaml'])
+k8s_resource('keycloak', port_forwards=8081)

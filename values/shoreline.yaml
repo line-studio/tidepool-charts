@@ -3,22 +3,19 @@ configmap:
   enabled: false
   data:
     ClinicDemoUserId: ""
-    KeycloakClientId: ""
-    KeycloakRealmUrl: ""
+    KeycloakAdminUsername: "admin"
+    KeycloakBaseUrl: "http://keycloak-http.default.svc.cluster.local"
+    KeycloakBackendClientId: "backend"
+    KeycloakClientId: "shoreline"
+    KeycloakRealm: "dev"
 secret:
   # -- whether to generate a secret
   enabled: false
   data_:
-    # -- service authorization secret
-    ServiceAuth: ""
-    # -- the token to use for long term logins
-    UserLongTermKey:
-    # -- the string to append to emails to forgo verification
-    UserMailVerification: ""
-    # -- the Tidepool user id of the Clinic demo account
-    ClinicDemoUserId: ""
-    KeycloakClientSecret: ""
-    KeycloakMigrationSecret: ""
+    KeycloakClientSecret: "d06e8001-94f5-4054-8086-69feb7f90e77"
+    KeycloakBackendClientSecret: "8f10ee82-f56f-44c3-854d-40ae4997f337"
+    KeycloakAdminPassword: "admin"
+    KeycloakMigrationSecret: "806a29b9-9ef0-47d4-8a0a-bdfdbb5f78d4"
 deployment:
   # -- Docker image
   image: tidepool/shoreline:master-latest
