@@ -203,6 +203,20 @@ entries:
     urls:
     - https://github.com/line-studio/tidepool-charts/releases/download/kafka-0.1.0/kafka-0.1.0.tgz
     version: 0.1.0
+  keycloak:
+  - apiVersion: v2
+    created: "2021-01-26T14:56:33.348916428Z"
+    description: A Helm chart to use Keycloak with Tidepool
+    digest: 50d24b52b30b3c2e5935f50df909e3717456a0d79a050b438aa6d886b6654b21
+    home: https://github.com/tidepool-org/development/charts
+    icon: https://www.tidepool.org/static/media/tidepool-t-logo.41feef82.png
+    maintainers:
+    - email: todd@tidepool.org
+      name: Todd Kazakov
+    name: keycloak
+    urls:
+    - https://github.com/line-studio/tidepool-charts/releases/download/keycloak-0.1.0/keycloak-0.1.0.tgz
+    version: 0.1.0
   messageapi:
   - apiVersion: v1
     appVersion: "1.0"
@@ -299,6 +313,16 @@ entries:
     - https://github.com/line-studio/tidepool-charts/releases/download/secrets-0.1.0/secrets-0.1.0.tgz
     version: 0.1.0
   shoreline:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-01-26T14:56:33.4689622Z"
+    description: A Helm chart for Kubernetes
+    digest: 91c0136c9205d304453d32f50d30381db864d6af40666cc3c2ec7b5d34883007
+    home: https://github.com/tidepool-org/development/charts
+    name: shoreline
+    urls:
+    - https://github.com/line-studio/tidepool-charts/releases/download/shoreline-0.2.0/shoreline-0.2.0.tgz
+    version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-12-15T14:56:12.876388499Z"
