@@ -152,6 +152,16 @@ entries:
   highwater:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-01-28T12:38:11.701927186Z"
+    description: A Helm chart for Kubernetes
+    digest: 3f2b297aa8298afde9995cbadf851fa77195542a251b2752847c0959260d851f
+    home: https://github.com/tidepool-org/development/charts
+    name: highwater
+    urls:
+    - https://github.com/line-studio/tidepool-charts/releases/download/highwater-0.2.1/highwater-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-12-16T20:50:18.093329886Z"
     description: A Helm chart for Kubernetes
     digest: 0cb3e86de2cb73087e76810d37b4dc94f8e436ccfdbb380758cfa8c3831d0bc3
