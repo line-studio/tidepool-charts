@@ -39,7 +39,7 @@ spec:
       - env:
       {{ include "charts.tracing.common" .}}
         {{ include "charts.kafka.common" .}}
-        {{ include "charts.kafka.cloudevents.client" .}}
+        {{ include "charts.kafka.cloudevents.client" (dict "Values" .Values "Release" .Release "client" "highwater") }}
         - name: SKIP_HAKKEN
           value: "true"
         - name: DISCOVERY_HOST
