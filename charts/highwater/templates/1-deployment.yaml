@@ -38,6 +38,7 @@ spec:
       containers:
       - env:
       {{ include "charts.tracing.common" .}}
+        {{ include "charts.kafka.common" .}}
         - name: SKIP_HAKKEN
           value: "true"
         - name: DISCOVERY_HOST
