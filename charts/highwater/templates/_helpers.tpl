@@ -32,6 +32,25 @@
           value: "otel-collector.observability:55680"
 {{ end }}
 
+{{- define "charts.kafka.cloudevents.client" -}}
+        - name: CLOUD_EVENTS_SOURCE
+          value: {{ .client | quote }}
+        - name: KAFKA_CONSUMER_GROUP
+          value: {{ printf "%s-%s" .Release.Namespace .client | quote }}
+        - name: KAFKA_TOPIC
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Values.kafka.configmapName }}
+              key: UserEventsTopic
+              optional: true
+        - name: KAFKA_DEAD_LETTERS_TOPIC
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Values.kafka.configmapName }}
+              key: UserEvents{{ .client | title }}DeadLettersTopic
+              optional: true
+{{ end }}
+
 {{- define "charts.kafka.common" -}}
         - name: KAFKA_BROKERS
           valueFrom:
