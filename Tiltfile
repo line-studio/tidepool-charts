@@ -1,3 +1,5 @@
+load('./lib/Tiltfile.helpers', 'runHelmChart')
+
 charts = [
     'auth',
     'blip',
@@ -12,7 +14,6 @@ charts = [
     'hydrophone',
     'jellyfish',
     'kafka',
-    'keycloak',
     'messageapi',
     'migrations',
     'mongo',
@@ -25,8 +26,6 @@ charts = [
     'tools',
     'zookeeper'
 ]
-
-globalValuesPath = './values/_global.yaml'
 
 ghp_token = os.environ.get("GHP_TOKEN")
 
@@ -41,27 +40,8 @@ docker_build('tidepool-seagull-dev', '../../LineTidepool/tidepool-seagull',
         'GHP_TOKEN': ghp_token
     })
 docker_build('tidepool-shoreline-dev', '../../LineTidepool/tidepool-shoreline', target='development')
-docker_build('tidepool-blip-dev', '../../LineTidepool/tidepool-blip', target='development')
-
-def runHelmChart(chartName):
-    values = []
-    chartPath = "./charts/{chartName}".format(chartName=chartName)
-    chartValuesPath = "./values/{chartName}.yaml".format(chartName=chartName)
-    chartValuesLocalPath = "./values_local/{chartName}.yaml".format(chartName=chartName)
-
-    valuesFileExists = read_yaml(chartValuesPath, False)
-    valuesLocalFileExists = read_yaml(chartValuesLocalPath, False)
-
-    if valuesFileExists:
-        values.append(chartValuesPath)
-    
-    if valuesLocalFileExists:
-        values.append(chartValuesLocalPath)
-
-    values.append(globalValuesPath)
-
-    yaml = helm(chartPath, values=values)
-    k8s_yaml(yaml)
+docker_build('tidepool-blip-dev', '../../LineTidepool/tidepool-blip', target='development', 
+    live_update=[sync('../../LineTidepool/tidepool-blip/app', '/app/app')])
 
 for chart in charts:
     runHelmChart(chart)
