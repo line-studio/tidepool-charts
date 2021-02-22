@@ -11,6 +11,17 @@ spec:
   routes:
   - matchers:
     - methods:
+      - GET
+      - POST
+      prefix: /scraper
+    routeAction:
+      single:
+        upstream:
+          name: jellyfish
+    options:
+      timeout: '300s'
+  - matchers:
+    - methods:
       - POST
       prefix: /data/
     routeAction:

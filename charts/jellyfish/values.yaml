@@ -8,6 +8,12 @@ deployment:
   image: tidepool/jellyfish:master-latest
   # -- number of replicas to deploy
   replicas: 1
+secret:
+  # -- whether to generate a secret
+  enabled: false
+  data_:
+    LibreViewUsername: ""
+    LibreViewPassword: ""
 store:
   # -- base name of mongo database to use
   database: data

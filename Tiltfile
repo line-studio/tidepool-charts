@@ -34,14 +34,22 @@ if not ghp_token:
             "need it when using the local development image (building from the repo).")
     fail(msg)
 
-docker_build('tidepool-seagull-dev', '../../LineTidepool/tidepool-seagull', 
+docker_build('tidepool-jellyfish-dev', '../tidepool-jellyfish', target='development', 
+    live_update=[
+        sync('../tidepool-jellyfish/lib', '/app/lib'),
+        sync('../tidepool-jellyfish/app.js', '/app/app.js')
+    ])
+docker_build('tidepool-shoreline-dev', '../tidepool-shoreline', target='development')
+docker_build('tidepool-seagull-dev', '../tidepool-seagull', 
     target='development', 
     build_args={ 
         'GHP_TOKEN': ghp_token
     })
-docker_build('tidepool-shoreline-dev', '../../LineTidepool/tidepool-shoreline', target='development')
-docker_build('tidepool-blip-dev', '../../LineTidepool/tidepool-blip', target='development', 
-    live_update=[sync('../../LineTidepool/tidepool-blip/app', '/app/app')])
+docker_build('tidepool-blip-dev', '../tidepool-blip', target='development', 
+    live_update=[sync('../tidepool-blip/app', '/app/app')],
+    build_args={ 
+        'GHP_TOKEN': ghp_token
+    })
 
 for chart in charts:
     runHelmChart(chart)

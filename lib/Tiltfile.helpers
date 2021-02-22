@@ -15,6 +15,12 @@ def runHelmChart(chartName):
     if valuesLocalFileExists:
         values.append(chartValuesLocalPath)
 
+    if chartName == 'mongo':
+        if valuesLocalFileExists and not valuesLocalFileExists['enabled']:
+            return
+        elif valuesFileExists and not valuesFileExists['enabled']:
+            return
+
     values.append(globalValuesPath)
 
     yaml = helm(chartPath, values=values)

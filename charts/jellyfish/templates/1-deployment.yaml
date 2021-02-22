@@ -66,6 +66,16 @@ spec:
           value: "seagull:{{.Values.global.ports.seagull}}"
         - name: TIDEPOOL_PERMISSION_CLIENT_ADDRESS
           value: "gatekeeper:{{.Values.global.ports.gatekeeper}}"
+        - name: LIBREVIEW_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: jellyfish
+              key: LibreViewUsername
+        - name: LIBREVIEW_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: jellyfish
+              key: LibreViewPassword
         image: "{{ .Values.deployment.image }}"
         securityContext:
           {{- .Values.podSecurityContext | toYaml | nindent 10 }}
