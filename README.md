@@ -9,7 +9,8 @@ Before making changes to any of the values, copy the `values` directory as `valu
 To have Tidepool up and running locally, do the following:
 
 0. Make sure Docker is installed, and a local K8s cluster like Minikube, Kind or k3s.
-    0.1. Also make sure the `GHP_TOKEN` environment variable is defined with a Github Personal Access Token to be able to use private Github Packages (if developing locally, building the images and such, otherwise if using remote images, will not be needed)
+    0.1. Install Tilt <br>
+    0.2. Also make sure the `GHP_TOKEN` environment variable is defined with a Github Personal Access Token to be able to use private Github Packages (if developing locally, building the images and such, otherwise if using remote images, will not be needed)
 1. Run `tilt up --port=10351 --file=Tiltfile.gloo` to boot up Gloo
 2. Run `tilt up --port=10352 --file=Tiltfile.keycloak` to boot up Keycloak
 3. Run `tilt up` to boot up the Tidepool application itself
