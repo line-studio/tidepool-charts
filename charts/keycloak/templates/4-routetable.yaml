@@ -1,0 +1,20 @@
+{{ if .Values.global.gloo.enabled }}
+apiVersion: gateway.solo.io/v1
+kind: RouteTable
+metadata:
+  name: keycloak
+  namespace: {{ .Release.Namespace }}
+  labels:
+    namespace: {{ .Release.Namespace }}
+    app: keycloak
+spec:
+  routes:
+  - matchers:
+      prefix: /keycloak
+    routeAction:
+      single:
+        upstream:
+          name: keycloak
+    options:
+      timeout: '300s'
+{{- end }}
