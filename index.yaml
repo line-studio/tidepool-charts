@@ -245,6 +245,19 @@ entries:
     version: 0.1.0
   keycloak:
   - apiVersion: v2
+    created: "2021-03-05T13:13:21.638902044Z"
+    description: A Helm chart to use Keycloak with Tidepool
+    digest: 0cb668f0d26f66f3f7867bb925a838f7f85b5c50d48e54f130ab1fab78a0b739
+    home: https://github.com/tidepool-org/development/charts
+    icon: https://www.tidepool.org/static/media/tidepool-t-logo.41feef82.png
+    maintainers:
+    - email: todd@tidepool.org
+      name: Todd Kazakov
+    name: keycloak
+    urls:
+    - https://github.com/line-studio/tidepool-charts/releases/download/keycloak-0.1.7/keycloak-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
     created: "2021-03-03T09:31:52.408201406Z"
     description: A Helm chart to use Keycloak with Tidepool
     digest: a79a1f8b444ce75e1f80c8f6029a122acb5d250f9127d6e08e8654e5bb22c555
@@ -465,4 +478,4 @@ entries:
     urls:
     - https://github.com/line-studio/tidepool-charts/releases/download/zookeeper-0.1.0/zookeeper-0.1.0.tgz
     version: 0.1.0
-generated: "2021-03-03T09:31:52.408631307Z"
+generated: "2021-03-05T13:13:21.638958244Z"
